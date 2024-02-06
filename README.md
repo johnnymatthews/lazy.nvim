@@ -49,15 +49,10 @@ if not vim.loop.fs_stat(lazypath) then
   })
 end
 vim.opt.rtp:prepend(lazypath)
+require("lazy").setup(plugins, opts)
 ```
 
 <!-- bootstrap:end -->
-
-Next step is to add **lazy.nvim** below the code added in the prior step in `init.lua`:
-
-```lua
-require("lazy").setup(plugins, opts)
-```
 
 - **plugins**: this should be a `table` or a `string`
   - `table`: a list with your [Plugin Spec](#-plugin-spec)
